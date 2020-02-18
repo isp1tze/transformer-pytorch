@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*-
+import torch
+import torch.nn as nn
+from torch.distributions import Categorical
+from torch.nn.parameter import Parameter
+from torch.nn.utils import clip_grad_norm_
+
+'''
+reference: https://github.com/yashbonde/Transformer-RL/blob/master/pytorch_script/pt_trans_ppo.py
+'''
+
 def gelu(x):
     out = 1 + torch.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * torch.pow(x, 3)))
     return out * x / 2
